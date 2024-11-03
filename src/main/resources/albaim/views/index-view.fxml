@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="albaim.IndexController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+   <Label text="Username" />
+   <TextField fx:id="usernameField" />
+   <Label text="Password" />
+   <PasswordField fx:id="passwordField" />
+
+    <Label fx:id="loginResultText" />
+    <Button onAction="#onLoginButtonClick" text="Login" />
+   <Label fx:id="signupText" onMouseClicked="#onSignupClick" text="Have no account? Sign Up" textFill="#0084ff" underline="true">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </Label>
+</VBox>

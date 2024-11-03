@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" spacing="18.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="albaim.SignupController">
+   <children>
+      <StackPane>
+         <children>
+            <Label alignment="CENTER" style="-fx-font-size: 24px;" text="Sign up" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </StackPane>
+      <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="180.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="10.0" prefWidth="40.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="emailLabel" text="Email" />
+            <TextField fx:id="emailField" promptText="youremail@exmaple.com" GridPane.columnIndex="1" />
+            <Label fx:id="usernameLabel" text="Username" GridPane.rowIndex="1" />
+            <TextField fx:id="usernameField" promptText="username to login" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+           <Label GridPane.columnIndex="2" GridPane.rowIndex="1">
+             <graphic>
+              <FontIcon fx:id="usernameValidity" fill="#999999" iconLiteral="fth-loader" iconSize="24" visible="false" />
+             </graphic>
+           </Label>
+           <Label fx:id="passwordLabel" text="Password" GridPane.rowIndex="2" />
+           <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+           <Label text="PasswdConfirm" GridPane.rowIndex="3" />
+           <PasswordField fx:id="passwordConfirmField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </GridPane>
+      <GridPane hgap="10.0" vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="180.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="10.0" prefWidth="40.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+         <children>
+            <Label fx:id="exprNameLabel" text="Expression Name" />
+            <Label text="Type" GridPane.rowIndex="1" />
+            <TextField fx:id="exprNameField" promptText="name to show to others" GridPane.columnIndex="1" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="16.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+               <children>
+                  <RadioButton fx:id="usePersonal" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="Personal" HBox.hgrow="ALWAYS">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="usertype" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="useEmployer" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Employer" toggleGroup="$usertype" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <Button fx:id="doSignupButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSignupButton" text="Sign Up!" VBox.vgrow="ALWAYS" />
+   </children>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+</VBox>

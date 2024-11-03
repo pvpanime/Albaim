@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="albaim.UserMapper">
+
+  <select id="selectAllUsers" resultType="albaim.User">
+    SELECT * FROM alba_user
+  </select>
+
+  <select id="selectUsername" resultType="java.lang.String">
+    SELECT username FROM alba_user WHERE username = #{username}
+  </select>
+
+  <select id="selectLogin" resultType="albaim.User">
+    SELECT * FROM alba_user WHERE username = #{username} AND passwd_raw = #{passwd_raw}
+  </select>
+
+  <insert id="insertUser" parameterType="albaim.User">
+    INSERT INTO alba_user (username, email, passwd_raw, exprname, usertype)
+    VALUES (#{username}, #{email}, #{passwd_raw}, #{exprname}, #{usertype})
+  </insert>
+
+</mapper>
