@@ -169,16 +169,17 @@ public class SignupController {
     if (!checkPasswordConfirm()) return;
     if (!checkRequired(exprNameField, exprNameLabel, null)) return;
     int userType = usePersonal.isSelected() ? 1 : useEmployer.isSelected() ? 2 : 0;
-    User user = new User(
-      useridField.getText().trim(),
-      emailField.getText().trim(),
-      passwordField.getText(),
-      exprNameField.getText().trim(),
-      userType);
+    String exprNameValue = exprNameField.getText().trim();
     try {
-      int result = userDAO.insertUser(user);
+      int result = userDAO.insertUser(
+        useridField.getText().trim(),
+        emailField.getText().trim(),
+        passwordField.getText(),
+        exprNameField.getText().trim(),
+        userType
+      );
       if (result > 0) {
-        alert(Alert.AlertType.INFORMATION, "Signup", "Welcome, " + user.getExprname() + "!", "You can use the entire service right now.");
+        alert(Alert.AlertType.INFORMATION, "Signup", "Welcome, " + exprNameValue + "!", "You can use the entire service right now.");
         Stage stage = (Stage) useridField.getScene().getWindow();
         stage.close();
       } else {

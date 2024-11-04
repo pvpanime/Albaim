@@ -6,7 +6,7 @@
 <mapper namespace="albaim.UserMapper">
 
   <resultMap id="UserResultMap" type="albaim.User">
-    <result property="created_at" column="created_at" typeHandler="org.apache.ibatis.type.SqlTimestampTypeHandler"/>
+    <result property="created_at" column="created_at" typeHandler="org.apache.ibatis.type.OffsetDateTimeTypeHandler"/>
   </resultMap>
 
   <select id="selectAllUsers" resultType="albaim.User">
@@ -29,5 +29,18 @@
     INSERT INTO alba_user (userid, email, passwd_raw, exprname, usertype)
     VALUES (#{userid}, #{email}, #{passwd_raw}, #{exprname}, #{usertype})
   </insert>
+
+  <insert id="insertEnterprise">
+    INSERT INTO alba_ent (userid, businessid, contact)
+    VALUES (#{userid}, #{businessId}, #{contact})
+  </insert>
+
+  <select id="selectEnterprise" resultType="albaim.User">
+    SELECT * FROM alba_ent;
+  </select>
+
+  <select id="selectEnterpriseUser" resultType="albaim.EnterpriseUserDTO">
+    SELECT userid, USR.email, USR.exprname, ENT.businessid, ENT.contact FROM alba_user USR INNER JOIN alba_ent ENT WHERE USR.userid = ENT.userid
+  </select>
 
 </mapper>

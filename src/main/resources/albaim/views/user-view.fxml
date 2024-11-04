@@ -3,31 +3,30 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.scene.SubScene?>
 <SplitPane dividerPositions="0.25" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="albaim.views.UserController">
   <items>
     <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
       <content>
         <Accordion style="-fx-font-size: 14px;">
           <panes>
-            <TitledPane animated="false" text="Get job">
+            <TitledPane animated="false" text="Get Alba">
               <content>
                 <VBox>
                   <children>
-                    <Hyperlink fx:id="hSearch" onAction="#aSearch" maxWidth="1.7976931348623157E308" styleClass="hyperlink" text="Search"  />
-                    <Hyperlink fx:id="hSuggestion" onAction="#aSuggestion" maxWidth="1.7976931348623157E308" styleClass="hyperlink" text="Suggestion" />
-                    <Hyperlink fx:id="hPeerApplicant" onAction="#aPeerApplicant" maxWidth="1.7976931348623157E308" styleClass="hyperlink" text="My registry" />
+                    <Hyperlink fx:id="hSearch" maxWidth="1.7976931348623157E308" onAction="#aSearch" styleClass="hyperlink" text="Search" />
+                    <Hyperlink fx:id="hSuggestion" maxWidth="1.7976931348623157E308" onAction="#aSuggestion" styleClass="hyperlink" text="Suggestion" />
+                    <Hyperlink fx:id="hPeerApplicant" maxWidth="1.7976931348623157E308" onAction="#aPeerApplicant" styleClass="hyperlink" text="My Appliances" />
                   </children>
                 </VBox>
               </content>
             </TitledPane>
-            <TitledPane animated="false" text="Find Employee">
+            <TitledPane animated="false" text="Find Peer">
               <content>
                 <VBox>
                   <children>
-                    <Hyperlink fx:id="hOpening" onAction="#aOpening" maxWidth="1.7976931348623157E308" styleClass="hyperlink" text="Opening" />
-                    <Hyperlink fx:id="hWorkplaces" onAction="#aWorkplaces" maxWidth="1.7976931348623157E308" styleClass="hyperlink" text="Workplaces" />
-                    <Hyperlink fx:id="hEmployerApplicants" onAction="#aEmployerApplicants" maxWidth="1.7976931348623157E308" styleClass="hyperlink" text="Applicants" />
+                    <Hyperlink fx:id="hOpening" maxWidth="1.7976931348623157E308" onAction="#aOpening" styleClass="hyperlink" text="Opening" />
+                    <Hyperlink fx:id="hWorkplaces" maxWidth="1.7976931348623157E308" onAction="#aWorkplaces" styleClass="hyperlink" text="Workplaces" />
+                    <Hyperlink fx:id="hEmployerApplicants" maxWidth="1.7976931348623157E308" onAction="#aEmployerApplicants" styleClass="hyperlink" text="Applicants" />
                   </children>
                 </VBox>
               </content>
@@ -36,7 +35,7 @@
               <content>
                 <VBox>
                   <children>
-                    <Hyperlink fx:id="hSetting" onAction="#aSetting" maxWidth="1.7976931348623157E308" styleClass="hyperlink" text="Account Setting" />
+                    <Hyperlink fx:id="hSetting" maxWidth="1.7976931348623157E308" onAction="#aSetting" styleClass="hyperlink" text="Account Setting" />
                     <Hyperlink fx:id="hLogout" maxWidth="1.7976931348623157E308" onAction="#handleHLogout" styleClass="hyperlink" text="Logout" />
                   </children>
                 </VBox>

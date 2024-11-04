@@ -1,5 +1,6 @@
 package albaim;
 
+import java.time.OffsetDateTime;
 import java.util.regex.Pattern;
 
 public class User {
@@ -12,35 +13,19 @@ public class User {
   public final String passwd_raw;
   public final String exprname;
   public final int usertype;
+  public final OffsetDateTime created_at;
 
-  public User(String userid, String email, String passwdRaw, String exprname, int usertype
-
-  ) {
+  public User(String userid, String email, String passwdRaw, String exprname, int usertype, OffsetDateTime createdAt) {
     this.userid = userid;
     this.email = email;
     passwd_raw = passwdRaw;
     this.exprname = exprname;
     this.usertype = usertype;
-  }
-
-  public String getUserid() {
-    return userid;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-
-  public String getPasswd_raw() {
-    return passwd_raw;
+    created_at = createdAt;
   }
 
   public String getExprname() {
     return exprname;
-  }
-
-  public int getUsertype() {
-    return usertype;
   }
 
   public String toString() {

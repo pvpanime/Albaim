@@ -22,11 +22,11 @@ public class UserDAO implements UserMapper {
   }
 
   @Override
-  public int insertUser(User user) {
-    System.out.println(user);
+//  public int insertUser(User user) {
+  public int insertUser(String userid, String email, String passwd_raw, String exprname, int type) {
     SqlSession sqlSession = MyBatisUtil.getSession();
     UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-    int result = mapper.insertUser(user);
+    int result = mapper.insertUser(userid, email, passwd_raw, exprname, type);
     System.out.println(result);
     sqlSession.commit();
     return result;
@@ -39,4 +39,10 @@ public class UserDAO implements UserMapper {
 
   @Override
   public String selectEmail(String email) { return realMapper().selectEmail(email); }
+
+  @Override
+  public int insertEnterprise(String userid, String businessId, String contact) {
+    return realMapper().insertEnterprise(userid, businessId, contact);
+  }
+
 }

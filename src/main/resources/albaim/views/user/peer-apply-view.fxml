@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" spacing="8.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <Label style="-fx-font-size: 24px;" text="My Appliance" textAlignment="CENTER" textOverrun="CLIP" />
+      <HBox VBox.vgrow="ALWAYS">
+         <children>
+          <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefWidth="180.0">
+               <content>
+                  <ListView maxHeight="1.7976931348623157E308" />
+               </content>
+          </ScrollPane>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Title" textOverrun="CLIP" />
+                  <Label styleClass="appliance-value-view" text="{{TitleView}}" textOverrun="CLIP" />
+                  <Separator prefWidth="200.0" />
+                  <Label text="Workplace Name" textOverrun="CLIP" />
+                  <Label styleClass="appliance-value-view" text="{{WorkplaceView}}" textOverrun="CLIP" />
+                  <Separator prefWidth="200.0" />
+                  <Label text="Location" />
+                  <Label styleClass="appliance-value-view" text="{{LocationView}}" />
+                  <Separator prefWidth="200.0" />
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Pay" textOverrun="CLIP" />
+                              <Label styleClass="appliance-value-view" text="{{PayView}}" textOverrun="CLIP" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Tour From" textOverrun="CLIP" />
+                              <Label maxHeight="1.7976931348623157E308" styleClass="appliance-value-view" text="{{TourStartView}}" textOverrun="CLIP" VBox.vgrow="ALWAYS" />
+                              <Label text="To" />
+                              <Label maxHeight="1.7976931348623157E308" styleClass="appliance-value-view" text="{{TourEndView}}" VBox.vgrow="ALWAYS" />
+                           </children></VBox>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Enterprise info" textAlignment="CENTER" textOverrun="CLIP" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+  </children>
+  <opaqueInsets>
+    <Insets />
+  </opaqueInsets>
+  <padding>
+    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+  </padding>
+</VBox>

@@ -1,20 +1,26 @@
 * {
   -fx-font-family: 'Segoe UI';
+}
+
+:root {
   -fx-font-size: 16px;
-  -fx-font-weight: lighter; /* Set the font weight to lighter */
+  -fx-font-weight: lighter;
 }
 
 .hyperlink {
-    -fx-text-fill: #007fff; /* Set your desired color */
+    -fx-text-fill: #007fff;
 }
 
-/* Prevent color change when the hyperlink is visited */
 .hyperlink:visited {
-    -fx-text-fill: #007fff; /* Keep the same color */
-    -fx-underline: false; /* Disable underline */
+    -fx-text-fill: #007fff;
+    -fx-underline: false;
 }
 
-/* You can also define a hover color if desired */
 .hyperlink:hover {
-    -fx-text-fill: #003f7f; /* Change color on hover */
+    -fx-text-fill: #003f7f;
+}
+
+*.appliance-value-view {
+    -fx-font-size: 18px !important;
+    -fx-font-weight: bolder !important;
 }

@@ -37,7 +37,7 @@ public class IndexController {
   protected void onLoginButtonClick() throws IOException {
     User user = new UserDAO().selectLogin(useridField.getText().trim(), passwordField.getText());
     if (user != null) {
-      loginResultText.setText("Welcome, "+ user.getExprname()+ "!");
+      loginResultText.setText("Welcome, "+ user.exprname + "!");
 
       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("user-view.fxml"));
       Parent root = fxmlLoader.load();
