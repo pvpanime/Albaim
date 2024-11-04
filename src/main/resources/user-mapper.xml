@@ -5,21 +5,29 @@
 
 <mapper namespace="albaim.UserMapper">
 
+  <resultMap id="UserResultMap" type="albaim.User">
+    <result property="created_at" column="created_at" typeHandler="org.apache.ibatis.type.SqlTimestampTypeHandler"/>
+  </resultMap>
+
   <select id="selectAllUsers" resultType="albaim.User">
     SELECT * FROM alba_user
   </select>
 
-  <select id="selectUsername" resultType="java.lang.String">
-    SELECT username FROM alba_user WHERE username = #{username}
+  <select id="selectUserid" resultType="string">
+    SELECT userid FROM alba_user WHERE userid = #{userid}
   </select>
 
-  <select id="selectLogin" resultType="albaim.User">
-    SELECT * FROM alba_user WHERE username = #{username} AND passwd_raw = #{passwd_raw}
+  <select id="selectLogin" resultType="albaim.User" resultMap="UserResultMap">
+    SELECT * FROM alba_user WHERE userid = #{userid} AND passwd_raw = #{passwd_raw}
+  </select>
+
+  <select id="selectEmail" resultType="string">
+    SELECT email FROM alba_user WHERE email = #{email}
   </select>
 
   <insert id="insertUser" parameterType="albaim.User">
-    INSERT INTO alba_user (username, email, passwd_raw, exprname, usertype)
-    VALUES (#{username}, #{email}, #{passwd_raw}, #{exprname}, #{usertype})
+    INSERT INTO alba_user (userid, email, passwd_raw, exprname, usertype)
+    VALUES (#{userid}, #{email}, #{passwd_raw}, #{exprname}, #{usertype})
   </insert>
 
 </mapper>

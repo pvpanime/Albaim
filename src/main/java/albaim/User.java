@@ -1,26 +1,30 @@
 package albaim;
 
-import java.time.OffsetDateTime;
+import java.util.regex.Pattern;
 
 public class User {
-  private final String username;
-  private final String email;
-  private final String passwd_raw;
-  private final String exprname;
-  private final int usertype;
-  private final OffsetDateTime created_at;
+  public static final Pattern EMAIL_PATTERN = Pattern.compile(
+    "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"
+  );
 
-  public User(String username, String email, String passwdRaw, String exprname, int usertype, OffsetDateTime createdAt) {
-    this.username = username;
+  public final String userid;
+  public final String email;
+  public final String passwd_raw;
+  public final String exprname;
+  public final int usertype;
+
+  public User(String userid, String email, String passwdRaw, String exprname, int usertype
+
+  ) {
+    this.userid = userid;
     this.email = email;
     passwd_raw = passwdRaw;
     this.exprname = exprname;
     this.usertype = usertype;
-    created_at = createdAt;
   }
 
-  public String getUsername() {
-    return username;
+  public String getUserid() {
+    return userid;
   }
 
   public String getEmail() {
@@ -39,7 +43,8 @@ public class User {
     return usertype;
   }
 
-  public OffsetDateTime getCreated_at() {
-    return created_at;
+  public String toString() {
+    return String.format("%s <%s> identified by: %s", exprname, email, userid);
   }
+
 }

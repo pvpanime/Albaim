@@ -3,3 +3,18 @@
   -fx-font-size: 16px;
   -fx-font-weight: lighter; /* Set the font weight to lighter */
 }
+
+.hyperlink {
+    -fx-text-fill: #007fff; /* Set your desired color */
+}
+
+/* Prevent color change when the hyperlink is visited */
+.hyperlink:visited {
+    -fx-text-fill: #007fff; /* Keep the same color */
+    -fx-underline: false; /* Disable underline */
+}
+
+/* You can also define a hover color if desired */
+.hyperlink:hover {
+    -fx-text-fill: #003f7f; /* Change color on hover */
+}

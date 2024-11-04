@@ -22,12 +22,21 @@ public class UserDAO implements UserMapper {
   }
 
   @Override
-  public void insertUser(User user) {
-    realMapper().insertUser(user);
+  public int insertUser(User user) {
+    System.out.println(user);
+    SqlSession sqlSession = MyBatisUtil.getSession();
+    UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+    int result = mapper.insertUser(user);
+    System.out.println(result);
+    sqlSession.commit();
+    return result;
   }
 
   @Override
-  public String selectUsername(String username) {
-    return realMapper().selectUsername(username);
+  public String selectUserid(String userid) {
+    return realMapper().selectUserid(userid);
   }
+
+  @Override
+  public String selectEmail(String email) { return realMapper().selectEmail(email); }
 }

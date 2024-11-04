@@ -8,9 +8,11 @@ public interface UserMapper {
 
   List<User> selectAllUsers();
 
-  User selectLogin(@Param("username") String id, @Param("passwd_raw") String passwd_raw);
+  User selectLogin(@Param("userid") String id, @Param("passwd_raw") String passwd_raw);
 
-  void insertUser(User user);
+  int insertUser(User user);
 
-  String selectUsername(@Param("username") String username);
+  String selectUserid(@Param("userid") String userid);
+
+  String selectEmail(@Param("email") String email);
 }
