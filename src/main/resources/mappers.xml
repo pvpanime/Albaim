@@ -39,8 +39,4 @@
     SELECT * FROM alba_ent;
   </select>
 
-  <select id="selectEnterpriseUser" resultType="albaim.EnterpriseUserDTO">
-    SELECT userid, USR.email, USR.exprname, ENT.businessid, ENT.contact FROM alba_user USR INNER JOIN alba_ent ENT WHERE USR.userid = ENT.userid
-  </select>
-
 </mapper>
